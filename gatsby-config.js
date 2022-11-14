@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `archive_explorer`,
+    title: `archive explorer`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [{
