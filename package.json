@@ -1,8 +1,8 @@
 {
-  "name": "blog-bog",
+  "name": "archive_explorer",
   "version": "1.0.0",
   "private": true,
-  "description": "archive explorer",
+  "description": "archive_explorer",
   "author": "u7088495",
   "keywords": [
     "gatsby"
@@ -18,7 +18,6 @@
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3.0.0",
-    "gatsby-plugin-sass": "^4.4.0",
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-plugin-styled-components": "^6.0.0",
     "gatsby-source-contentful": "^8.0.0",
@@ -26,7 +25,6 @@
     "gatsby-transformer-sharp": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6",
-    "sass": "^1.32.12"
+    "styled-components": "^5.3.6"
   }
 }
