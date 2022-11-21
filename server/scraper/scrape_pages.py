@@ -12,6 +12,7 @@ article_data = {}
 
 article_id = 0
 
+
 def get_content(article, tag, classes):
     field = article.find(tag, class_=classes)
     if field is None or isinstance(field.contents[0], Tag):

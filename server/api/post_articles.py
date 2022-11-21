@@ -100,7 +100,7 @@ def main():
    with open('data/article_data.json', 'r') as f:
       article_data = json.load(f)
 
-   with open('posted_articles.txt', 'r') as f:
+   with open('data/posted_articles.txt', 'r') as f:
       lines = f.readlines()
       for line in lines:
          posted_articles[line] = True
@@ -114,7 +114,7 @@ def main():
             create_asset(article)
             create_entry(article, pub)
 
-            with open('posted_articles.txt', 'a') as f:
+            with open('data/posted_articles.txt', 'a') as f:
                f.write(title)
                f.write('\n')
 

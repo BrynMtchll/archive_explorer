@@ -1,9 +1,9 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
-import Header from '../components/index/Header'
-import Carousels from '../components/index/Carousels'
-import Layout from '../components/shared/Layout'
+import Header from 'archive_explorer/src/components/index/Header'
+import Carousels from 'src/components/index/Carousels'
+import Layout from 'src/components/shared/Layout'
 
 const IndexPage = ({data}) => {
    return (
