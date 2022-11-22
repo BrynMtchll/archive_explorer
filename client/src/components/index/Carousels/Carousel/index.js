@@ -1,6 +1,6 @@
 import React from 'react'
 import ArrowButton from './ArrowButton'
-import ArticleCard from 'src/components/shared/ArticleCard'
+import ArticleCard from 'components/shared/ArticleCard'
 
 import {CarouselS, TitleS, ArrowButtonsS, ListS, ItemS} from './Styles'
 
