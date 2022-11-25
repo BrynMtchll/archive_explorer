@@ -13,7 +13,7 @@ export default createGlobalStyle`
         line-height: 1.4;
         ${baseFontSize.l}
         ${fontFamily}
-
+        color: ${color.darkPrimary};
     }
 
     html, body, div, span, applet, object, iframe,
@@ -33,6 +33,8 @@ export default createGlobalStyle`
         font-style: inherit;
         font-size: 100%;
         vertical-align: baseline;
+        white-space: normal;
+
     }
 
     :focus {

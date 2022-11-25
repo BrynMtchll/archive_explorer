@@ -3,7 +3,7 @@ import {Link} from 'gatsby'
 
 import {Navbar, Item} from './Styles'
 
-const SiteNavbar = () => {
+const ProjectNavbar = () => {
     return (
         <Navbar>
             <Item logo>
@@ -16,4 +16,4 @@ const SiteNavbar = () => {
     )
 }
 
-export default SiteNavbar
+export default ProjectNavbar

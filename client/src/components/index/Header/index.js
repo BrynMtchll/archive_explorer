@@ -1,15 +1,15 @@
 import React from 'react'
 
-import {HeaderS, TitleS, SubtitleS} from './Styles'
+import {Header, Title, Subtitle} from './Styles'
 
-const Header = () => {
+const ProjectHeader = () => {
     return (
-        <HeaderS>
-            <TitleS></TitleS>
-            <SubtitleS></SubtitleS>
-        </HeaderS>
+        <Header>
+            <Title>The best of medium's archives in one place.</Title>
+            <Subtitle>Explore the most popular archived reads of the top 25 medium publications from the past 5 years.</Subtitle>
+        </Header>
     )
 }   
 
-export default Header
+export default ProjectHeader
 

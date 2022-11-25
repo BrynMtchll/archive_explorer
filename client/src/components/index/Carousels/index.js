@@ -2,14 +2,23 @@ import React from 'react'
 
 import Carousel from './Carousel'
 
-import {CarouselsS} from './Styles'
+import {Carousels} from './Styles'
 
-const Carousels = () => {
+const ProjectCarousels = () => {
     return (
-        <CarouselsS>
-            {/* create carousel for each pub */}
-        </CarouselsS>
+        <Carousels>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+            <Carousel/>
+        </Carousels>
     )
 }
 
-export default Carousels
+export default ProjectCarousels

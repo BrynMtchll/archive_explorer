@@ -1,16 +1,16 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
-// import Header from 'components/index/Header'
-// import Carousels from 'components/index/Carousels'
-import SiteLayout from 'components/shared/SiteLayout'
+import Header from 'components/index/Header'
+import Carousels from 'components/index/Carousels'
+import Layout from 'components/shared/Layout'
 
 const IndexPage = ({data}) => {
    return (
-      <SiteLayout>
-         {/* <Header/>
-         <Carousels/> */}
-      </SiteLayout>
+      <Layout>
+         <Header/>
+         <Carousels/>
+      </Layout>
    )
 }
 

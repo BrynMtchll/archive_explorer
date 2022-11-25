@@ -1,21 +1,21 @@
 import React, {Fragment} from "react"
 
-import SiteNavbar from "components/shared/SiteNavbar"
+import Navbar from "components/shared/Navbar"
 import BaseStyles from "global/BaseStyles"
 import {SiteRoot} from "./Styles"
 
 import 'global/fontStyles.css'
 
-const SiteLayout = ({children}) => {
+const projectLayout = ({children}) => {
     return (
         <Fragment>
             <BaseStyles/>
             <SiteRoot>
-                <SiteNavbar/>
+                <Navbar/>
                 {children}
             </SiteRoot>
         </Fragment>
     )
 }
 
-export default SiteLayout
+export default projectLayout
