@@ -2,30 +2,41 @@ import styled from 'styled-components'
 
 import {color} from 'util/styles'
 
+const arrow = {
+    lineLength: '1.1',
+    lineThickness: '0.2',
+    scaleFactor: '1.25',
+    angle: '65'
+}
+
+arrow.height = Math.sin(arrow.angle / 180 *Math.PI) * arrow.lineLength * 2 - 0.05
+arrow.width = Math.cos(arrow.angle / 180 *Math.PI) * arrow.lineLength + 0.2
+
 export const Arrow = styled.div`
     position: relative;
-    visibility: hidden;
-    height: 100%;
-    width: 100%;
+    height: ${arrow.height}rem;
+    width: ${arrow.width}rem;
+    padding: 0 0.2rem;
+    transition: width 0.1s linear, height 0.1s linear;
     
     div {
         position: absolute;
-        left: 35%;
-        top: 50%;
-        width: 2.25rem;
-        height: 4px;
+        width: ${arrow.lineLength}rem;
+        height: ${arrow.lineThickness}rem;
         background: white;
         border-radius: 4px;
+        transition: width 0.1s linear, height 0.1s linear;
 
         &:nth-child(1) {
-            transform: rotateZ(-65deg);
-            transform-origin: bottom left;
-            top: 50.3%;
+            transform: rotateZ(65deg);
+            transform-origin: top left;
+            top: 0;
         }
 
         &:nth-child(2) {
-            transform: rotateZ(65deg);
-            transform-origin: top left;
+            transform: rotateZ(-65deg);
+            transform-origin: bottom left;
+            bottom: 0;
         }
     }
 `
@@ -34,17 +45,26 @@ export const ArrowBtn = styled.button`
     width: 3.25rem;
     height: 80%;
     backdrop-filter: brightness(70%) blur(0.5px);
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px 0 0 5px;
     border-right: none;
     visibility: ${props => props.btnHidden ? "hidden" : "visible"};
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    ${props => !props.isLeftBtn ? "transform: rotateZ(180deg);": ""}
+    ${props => props.isLeftBtn ? "transform: rotateZ(180deg);": ""}
 
     &:hover {
         backdrop-filter: brightness(55%) blur(0.5px);
+        cursor: pointer;
 
         ${Arrow} {
-            visibility: visible;
+            width: calc(${arrow.width}rem * ${arrow.scaleFactor});
+            height: calc(${arrow.height}rem * ${arrow.scaleFactor});
+            div {
+                width: calc(${arrow.lineLength}rem * ${arrow.scaleFactor});
+                height: calc(${arrow.lineThickness}rem * ${arrow.scaleFactor});
+            }
         }
     }
 `

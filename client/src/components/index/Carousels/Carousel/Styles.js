@@ -1,18 +1,21 @@
 import styled from 'styled-components'
-import {fontSize, sitePadding, carouselItemWidthExp} from 'util/styles'
+import {fontSize, sitePadding, carouselItemWidthExp, color} from 'util/styles'
+import {ArrowBtn, Arrow} from './ArrowBtn/Styles'
+import {LinkArrow} from './PubLink/Styles'
 
 
 
 export const Carousel = styled.div`
     margin-bottom: 2.5rem;
-`
-
-export const Title = styled.h2`
-    ${fontSize.m}
-    ${sitePadding}
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
+    
+    ${LinkArrow} {
+        visibility: hidden;
+    }
+    &:hover {
+        ${LinkArrow} {
+            visibility: visible;
+        }
+    }
 `
 
 export const ArrowBtns = styled.div`
@@ -24,6 +27,25 @@ export const ArrowBtns = styled.div`
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+
+    ${Arrow} {
+        visibility: hidden;
+    }
+
+    &:hover {
+        ${ArrowBtn} {
+            &:nth-child(1) {
+                ${Arrow} {
+                    visibility: ${props => props.leftBtnHidden ? "hidden" : "visible"};
+                }
+            }
+            &:nth-child(2) {
+                ${Arrow} {
+                    visibility: visible;
+                }
+            }
+        }
+    }
 `
 
 export const List = styled.div`

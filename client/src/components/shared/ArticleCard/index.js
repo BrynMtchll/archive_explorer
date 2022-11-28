@@ -2,21 +2,21 @@ import React from 'react'
 
 import {ArticleCard, Text, Credits, PubLogo, Author, Pub, Title, Subtitle, Details, Date, ClapsLogo, Claps, Thumbnail, ConnectorWord} from './Styles'
 
-const ProjectArticleCard = ({i}) => {
+const ProjectArticleCard = ({articleData}) => {
     return (
         <ArticleCard>
             <Text>
                 <Credits>
                     <PubLogo/>
-                    <Author>Brynly Mitchell</Author>
+                    <Author>{articleData.author}</Author>
                     <ConnectorWord> In </ConnectorWord>
-                    <Pub>Brynly's House</Pub>
+                    <Pub>{articleData.publication}</Pub>
                 </Credits>
-                <Title>{i} How I became Brynly Mitchell by stealing his identity</Title>
-                <Subtitle>I stole it and then I sold it to a fella from Brixton who fancied the comfort of his delicious yummy queen sized bed</Subtitle>
+                <Title>{articleData.title}</Title>
+                <Subtitle>{articleData.subtitle}</Subtitle>
                 <Details>
-                    <Date>Jun 02, 2003</Date>
-                    <Claps><ClapsLogo/> 50K</Claps>
+                    <Date>{articleData.date}</Date>
+                    <Claps><ClapsLogo/>{articleData.claps}</Claps>
                 </Details>
             </Text>
             <Thumbnail/>

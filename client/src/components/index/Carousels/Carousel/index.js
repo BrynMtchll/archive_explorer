@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import ArrowBtn from './ArrowBtn'
+import PubLink from './PubLink'
 import ArticleCard from 'components/shared/ArticleCard'
 
-import {Carousel, Title, ArrowBtns, List, Item} from './Styles'
+import {Carousel, ArrowBtns, List, Item} from './Styles'
 
-const ProjectCarousel = () => {
+const ProjectCarousel = ({articlesData}) => {
     const initpositions = []
     for (let i = 0; i < 10; i++) initpositions.push({position: i, visible: true})
     
@@ -12,11 +13,9 @@ const ProjectCarousel = () => {
     const [btnDisabled, setBtnDisabled] = useState(false);
     const [leftBtnHidden, setLeftBtnHidden] = useState(true);
 
-    const items = positions.map((state, i) => (
-        <Item btnDisabled={btnDisabled} key={i} visible={state.visible} position={state.position}><ArticleCard i={i}/></Item>
+    const items = articlesData.map((articleData, i) => (
+        <Item btnDisabled={btnDisabled} key={articleData.id} visible={positions[i].visible} position={positions[i].position}><ArticleCard articleData={articleData}/></Item>
     ))
-
-    
 
     const updatePositions = ({bound, increment, jump}, isLeftBtn) => {
         setPositions(
@@ -59,9 +58,9 @@ const ProjectCarousel = () => {
 
     return (
         <Carousel>
-            <Title>Publication</Title>
+            <PubLink publication={articlesData[0].publication}/>
             <List>
-                <ArrowBtns>
+                <ArrowBtns leftBtnHidden={leftBtnHidden}>
                     <ArrowBtn btnHidden={leftBtnHidden} isLeftBtn={true} handleArrowClick={handleArrowClick}/>
                     <ArrowBtn btnHidden={false} isLeftBtn={false} handleArrowClick={handleArrowClick}/>
                 </ArrowBtns>

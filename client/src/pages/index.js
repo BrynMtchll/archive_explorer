@@ -6,10 +6,11 @@ import Carousels from 'components/index/Carousels'
 import Layout from 'components/shared/Layout'
 
 const IndexPage = ({data}) => {
+   const articlesData = data.allContentfulArticleComponent.edges.map(edge => edge.node);
    return (
       <Layout>
          <Header/>
-         <Carousels/>
+         <Carousels articlesData={articlesData}/>
       </Layout>
    )
 }
@@ -22,27 +23,29 @@ export const Head = () => {
    </>
 }
 
+
+
 export const query = graphql`
-   query {
-      allContentfulArticleComponent {
-         edges {
-            node {
-              title
-              subtitle
-              url
-              author
-              date
-              thumbnail {
-               contentful_id
-               file {
-                  url
-               }
-              }
-              publication
-            }
-          }
-        }
+query topTenArticles {
+   allContentfulArticleComponent(
+     filter: {publication: {eq: "The_Startup"}}
+     sort: {claps: DESC}
+     limit: 10
+   ) {
+     edges {
+       node {
+         id
+         title
+         claps
+         author
+         date
+         publication
+         subtitle
+         url
+       }
+     }
    }
+ }
 `
 
 export default IndexPage

@@ -7,10 +7,10 @@ const ProjectNavbar = () => {
     return (
         <Navbar>
             <Item logo>
-                <Link>Archive Explorer</Link>
+                <div>Archive Explorer</div>
             </Item>
             <Item>
-                <Link>Explore</Link>
+                <div>Explore</div>
             </Item>
         </Navbar>
     )

@@ -4,19 +4,19 @@ import Carousel from './Carousel'
 
 import {Carousels} from './Styles'
 
-const ProjectCarousels = () => {
+const ProjectCarousels = ({articlesData}) => {
     return (
         <Carousels>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
-            <Carousel/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
+            <Carousel articlesData={articlesData}/>
         </Carousels>
     )
 }

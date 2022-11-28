@@ -5,19 +5,24 @@ import {fontSize, color, articleCardWidth} from 'util/styles'
 export const ArticleCard = styled.div`
     display: flex;
     justify-content: space-between;
-    height: auto;
+    height: 12.25rem;
+
     border: 1px solid ${color.darkPrimary};
     ${articleCardWidth}
 `
 export const Text = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     height: 100%;
     padding: 1rem 1.25rem 1rem 1rem;
     min-width: 0;
     flex-grow: 1;
-    
 `
 export const Thumbnail = styled.div`
-    width: 30rem;
+    width: 20rem;
+    max-width: 20rem;
+    min-width: 20rem;
     background: blue;
     border-radius: 2.5%;
     margin: 0.5rem;
@@ -79,7 +84,9 @@ export const Details = styled.div`
     justify-content: space-between;
     ${fontSize.t}
     color: ${color.medium};
-    align-items: center;
+    align-items: flex-end;
+    flex-grow: 1;
+
 `
 export const Date = styled.h6`
     margin-right: 1rem;
