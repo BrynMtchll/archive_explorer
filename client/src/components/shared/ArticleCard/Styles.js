@@ -1,31 +1,48 @@
 import styled from 'styled-components'
 
-import {fontSize, color, articleCardWidth} from 'util/styles'
+import {fontSize, color, articleCardWidth, articleCardHeight} from 'util/styles'
 
 export const ArticleCard = styled.div`
     display: flex;
-    justify-content: space-between;
-    height: 12.25rem;
+    flex-direction: column;
+    // height: ${articleCardHeight};
 
-    border: 1px solid ${color.darkPrimary};
+    // border: 1px solid ${color.lightSecondary};
+    // box-shadow: 0 0 4px 2px ${color.lightSecondary};
+    background: #d7dbd8;
+    border-radius: 5px;
+    padding: 0.5rem;
+    
     ${articleCardWidth}
 `
 export const Text = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    height: 100%;
-    padding: 1rem 1.25rem 1rem 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 10rem;
+    margin-right: 2rem;
     min-width: 0;
     flex-grow: 1;
+    background: #2c2e2c;
+    border-radius: 10px;
+    height: 20rem;
+    color: ${color.lightSecondary};
+    // box-shadow: -0.5rem -0.25rem 4px 4px #6b706c;
+
+
 `
 export const Thumbnail = styled.div`
-    width: 20rem;
-    max-width: 20rem;
-    min-width: 20rem;
-    background: blue;
-    border-radius: 2.5%;
-    margin: 0.5rem;
+    max-height: 15rem;
+    height: 8rem;
+    min-height: 5rem;
+    border-radius: 5px;
+    margin-left: 2rem;
+    margin-top: -9rem;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid #5c5504;
 `
 export const Credits = styled.div`
     margin-bottom: 0.4rem;
@@ -59,11 +76,11 @@ export const Title = styled.h4`
     line-height: 1.25;
     font-weight: 700;
     margin-bottom: 0.4rem;
-    max-height: 3.25rem;
+    max-height: 5.25rem;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; 
 `
 export const Subtitle = styled.h5`
@@ -84,12 +101,16 @@ export const Details = styled.div`
     justify-content: space-between;
     ${fontSize.t}
     color: ${color.medium};
+    justify-self: flex-end;
     align-items: flex-end;
     flex-grow: 1;
-
 `
 export const Date = styled.h6`
     margin-right: 1rem;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid ${color.medium};
+    flex-grow: 1;
+
 `
 export const Claps = styled.h6`
     display: flex;

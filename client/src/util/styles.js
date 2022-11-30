@@ -22,6 +22,7 @@ export const color = {
     darkSecondary: '#031B1A',
     medium: '#5c5c5c',
     colorPrimary: '#00A7AF',
+    backgroundLightPrimary: '#98a69e',
 
 //     $light-primary: hsl(350, 5%, 93%);
 // $light-secondary: hsl(350, 0%, 55%);
@@ -30,7 +31,7 @@ export const color = {
 // $dark-secondary: hsl(350, 5%, 10%);
 }
 const carouselItemMarginVal = '1.5rem';
-const numVisCarouselItems = 2;
+const numVisCarouselItems = 4;
 
 // article width calculated such that the desired number of 
 // carousel items fit perfectly within the site padding
@@ -40,5 +41,6 @@ export const sitePadding = `padding: 0 4rem;`
 
 export const articleCardWidth = `width: calc(${articleCardWidthExp});`
 // article width + margin 
-export const carouselItemWidthExp = `${articleCardWidthExp} + 1.5rem`;
+export const carouselItemWidthExp = `${articleCardWidthExp} + ${carouselItemMarginVal}`;
+export const articleCardHeight = '20rem';
 

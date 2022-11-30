@@ -42,6 +42,9 @@ query topTenArticles {
          publication
          subtitle
          url
+         thumbnail {
+            gatsbyImageData(placeholder: BLURRED)
+         }
        }
      }
    }

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import {fontSize, color, sitePadding} from 'util/styles'
 
 const arrow = {
-    lineLength: '0.6',
-    lineThickness: '0.15',
+    lineLength: '0.8',
+    lineThickness: '0.18',
 }
 
 arrow.height = Math.sqrt(Math.pow(arrow.lineLength, 2)/2)*2
@@ -28,13 +28,13 @@ export const LinkArrow = styled.div`
     position: relative;
     margin-left: 0.5rem;
     padding: 0 0.1rem;
-    transition: margin-left 0.2s ease-in;
+    transition: margin-left 0.2s ease-out;
 
     ${setArrowDimensions({scaleFactor: 1})}
 
     div {
         position: absolute;
-        background: ${color.darkPrimary};
+        background: #bd4b5e;
 
         &:nth-child(1) {
             transform: rotateZ(45deg);
@@ -54,14 +54,15 @@ export const LinkPrompt = styled.span`
     opacity: 0;
     width: 0;
     white-space: nowrap;
-    transition: opacity 0.3s, margin-left 0.3s;
+    transition: opacity 0.5s, margin-left 0.5s;
     ${fontSize.t}
+    color: #bd4b5e;
 `
 
 export const PubLink = styled.div`
     position: relative;
     ${sitePadding}
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
     display: inline-flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -70,20 +71,23 @@ export const PubLink = styled.div`
 
     &:hover {
         padding-right: 0;
+        cursor: pointer;
         ${LinkArrow} {
-            margin-left: 4.5rem;
-            ${setArrowDimensions({scaleFactor: 0.8})}
+            margin-left: 4.3rem;
+            ${setArrowDimensions({scaleFactor: 0.6})}
+            transition: margin-left 0.2s ease-in;
         }
+        
         ${LinkPrompt} {
             opacity: 1;
-            margin-left: 0.5rem;
-            transition: opacity 0.8s 0.1s, margin-left 0.4s 0.2s;
+            margin-left: 0.8rem;
+            transition: opacity 1s 0.1s, margin-left 0.4s 0.2s;
         }
     }
 `
 
 export const Pub = styled.h2`
-    ${fontSize.m}
+    ${fontSize.l}
     text-transform: uppercase;
     font-weight: 500;
 `

@@ -6,7 +6,7 @@ import {PubLink, Pub, LinkArrow, LinkPrompt} from './Styles'
 const ProjectPubLink = ({publication}) => {
     return (
         <PubLink>
-            <Pub>{publication}</Pub>
+            <Pub>The Startup</Pub>
             <LinkPrompt>Explore all</LinkPrompt>
             <LinkArrow>
                 <div></div>

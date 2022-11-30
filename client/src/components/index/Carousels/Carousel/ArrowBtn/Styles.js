@@ -42,20 +42,21 @@ export const Arrow = styled.div`
 `
 
 export const ArrowBtn = styled.button`
-    width: 3.25rem;
-    height: 80%;
-    backdrop-filter: brightness(70%) blur(0.5px);
-    border-radius: 5px 0 0 5px;
+    width: 2.5rem;
+    height: 100%;
+    backdrop-filter: brightness(90%) blur(0.5px);
+    // border-radius: 5px 0 0 5px;
     border-right: none;
     visibility: ${props => props.btnHidden ? "hidden" : "visible"};
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: all;
 
     ${props => props.isLeftBtn ? "transform: rotateZ(180deg);": ""}
 
     &:hover {
-        backdrop-filter: brightness(55%) blur(0.5px);
+        backdrop-filter: brightness(85%) blur(0.5px);
         cursor: pointer;
 
         ${Arrow} {

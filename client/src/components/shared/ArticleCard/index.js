@@ -1,25 +1,33 @@
 import React from 'react'
+import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 import {ArticleCard, Text, Credits, PubLogo, Author, Pub, Title, Subtitle, Details, Date, ClapsLogo, Claps, Thumbnail, ConnectorWord} from './Styles'
 
 const ProjectArticleCard = ({articleData}) => {
+    const image = getImage(articleData.thumbnail);
     return (
         <ArticleCard>
+            {/* <Thumbnail>
+                <GatsbyImage as={"div"} image={image} alt={"thumbnail"} objectFit={'cover'}/>
+            </Thumbnail> */}
             <Text>
-                <Credits>
+                {/* <Credits>
                     <PubLogo/>
                     <Author>{articleData.author}</Author>
                     <ConnectorWord> In </ConnectorWord>
                     <Pub>{articleData.publication}</Pub>
-                </Credits>
+                </Credits> */}
                 <Title>{articleData.title}</Title>
                 <Subtitle>{articleData.subtitle}</Subtitle>
                 <Details>
                     <Date>{articleData.date}</Date>
-                    <Claps><ClapsLogo/>{articleData.claps}</Claps>
+                    {/* <Claps><ClapsLogo/>{articleData.claps}</Claps> */}
                 </Details>
             </Text>
-            <Thumbnail/>
+            <Thumbnail>
+                <GatsbyImage as={"div"} image={image} alt={"thumbnail"} objectFit={'cover'}/>
+            </Thumbnail>
+        
         </ArticleCard>
     )
 }
