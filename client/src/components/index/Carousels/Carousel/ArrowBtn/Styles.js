@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import {color} from 'util/styles'
+import {color, article} from 'util/styles'
 
 const arrow = {
     lineLength: '1.1',
@@ -44,8 +44,8 @@ export const Arrow = styled.div`
 export const ArrowBtn = styled.button`
     width: 2.5rem;
     height: 100%;
-    backdrop-filter: brightness(90%) blur(0.5px);
-    // border-radius: 5px 0 0 5px;
+    backdrop-filter: brightness(70%) blur(0.6px);
+    border-radius: ${article.borderRadius} 0 0 ${article.borderRadius};
     border-right: none;
     visibility: ${props => props.btnHidden ? "hidden" : "visible"};
     display: flex;
@@ -56,7 +56,7 @@ export const ArrowBtn = styled.button`
     ${props => props.isLeftBtn ? "transform: rotateZ(180deg);": ""}
 
     &:hover {
-        backdrop-filter: brightness(85%) blur(0.5px);
+        backdrop-filter: brightness(50%) blur(0.7px);
         cursor: pointer;
 
         ${Arrow} {

@@ -4,9 +4,9 @@ import {fontSize, sitePadding, color} from 'util/styles'
 export const Navbar = styled.div`
     display: flex;
     justify-content: flex-start;
-    background: ${color.lightSecondary};
+    border-bottom: 0.5px solid ${color.medium};
     align-items: baseline;
-    ${sitePadding}
+    padding: 0 ${sitePadding};
 `
 
 export const Item = styled.div`
@@ -14,5 +14,5 @@ export const Item = styled.div`
     margin-right: 2rem;
     ${props => props.logo ? fontSize.m : ''}
     font-weight: ${props => props.logo ? '600' : '400'};
-    padding: 0.75rem 0;
+    padding: 1.75rem 0;
 `

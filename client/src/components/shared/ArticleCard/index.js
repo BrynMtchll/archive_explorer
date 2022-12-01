@@ -7,9 +7,6 @@ const ProjectArticleCard = ({articleData}) => {
     const image = getImage(articleData.thumbnail);
     return (
         <ArticleCard>
-            {/* <Thumbnail>
-                <GatsbyImage as={"div"} image={image} alt={"thumbnail"} objectFit={'cover'}/>
-            </Thumbnail> */}
             <Text>
                 {/* <Credits>
                     <PubLogo/>

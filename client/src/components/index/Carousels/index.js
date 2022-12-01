@@ -5,18 +5,14 @@ import Carousel from './Carousel'
 import {Carousels} from './Styles'
 
 const ProjectCarousels = ({articlesData}) => {
+
+    const carousels = []
+    for (let i = 0; i < 10; i++) {
+        carousels.push(<Carousel articlesData={articlesData}></Carousel>)
+    }
     return (
         <Carousels>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
-            <Carousel articlesData={articlesData}/>
+            {carousels}
         </Carousels>
     )
 }

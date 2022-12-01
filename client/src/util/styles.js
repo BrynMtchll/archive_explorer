@@ -17,30 +17,37 @@ export const fontFamily = 'font-family: "Fira Sans", sans-serif;'
 
 export const color = {
     lightPrimary: '#E8E8E8',
-    lightSecondary: '#dbdbdb',
+    lightSecondary: '#b5b5b5',
     darkPrimary: '#0D1213',
     darkSecondary: '#031B1A',
     medium: '#5c5c5c',
     colorPrimary: '#00A7AF',
-    backgroundLightPrimary: '#98a69e',
-
-//     $light-primary: hsl(350, 5%, 93%);
-// $light-secondary: hsl(350, 0%, 55%);
-// $light-half-secondary: mix($light-primary, $light-secondary, 50%);
-// $dark-primary: hsl(350, 5%, 5%);
-// $dark-secondary: hsl(350, 5%, 10%);
+    backgroundLightSecondary: '#c0cfc6',
+    backgroundLightPrimary: '#e1ede6',
+    backgroundColorDarkSecondary: '#67746d',
+    backgroundColorMedium: '#96a899',
+    colorSecondary: '#5c5504',
+    highlight: '#db355c',
 }
-const carouselItemMarginVal = '1.5rem';
-const numVisCarouselItems = 4;
 
-// article width calculated such that the desired number of 
-// carousel items fit perfectly within the site padding
-const articleCardWidthExp = `(100vw - (2 * 4rem) - ((${numVisCarouselItems} - 1) * ${carouselItemMarginVal})) / ${numVisCarouselItems}`
+export const carousel = {
+    numVisItems: 4,
+    itemMargin: '1.5rem',
+}
 
-export const sitePadding = `padding: 0 4rem;`
+export const sitePadding = '5rem';
 
-export const articleCardWidth = `width: calc(${articleCardWidthExp});`
-// article width + margin 
-export const carouselItemWidthExp = `${articleCardWidthExp} + ${carouselItemMarginVal}`;
-export const articleCardHeight = '20rem';
+// article width calculated such that 
+// the desired number of carousel items 
+// fit neatly within the site padding
 
+export const article = {
+    width: `calc((100vw 
+            - (2 * ${sitePadding}) 
+            - ((${carousel.numVisItems} - 1) * ${carousel.itemMargin})) 
+            / ${carousel.numVisItems})`,
+    height: '20rem',
+    borderRadius: '0.8rem',
+}
+
+carousel.itemWidth = `calc(${article.width} + ${carousel.itemMargin})`

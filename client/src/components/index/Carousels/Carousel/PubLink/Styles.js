@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {fontSize, color, sitePadding} from 'util/styles'
 
 const arrow = {
-    lineLength: '0.8',
+    lineLength: '0.65',
     lineThickness: '0.18',
 }
 
@@ -34,12 +34,12 @@ export const LinkArrow = styled.div`
 
     div {
         position: absolute;
-        background: #bd4b5e;
+        background: ${color.highlight};
 
         &:nth-child(1) {
             transform: rotateZ(45deg);
             transform-origin: top left;
-            top: 0;
+            top: -0.1px;
         }
 
         &:nth-child(2) {
@@ -56,13 +56,12 @@ export const LinkPrompt = styled.span`
     white-space: nowrap;
     transition: opacity 0.5s, margin-left 0.5s;
     ${fontSize.t}
-    color: #bd4b5e;
+    color: ${color.highlight};
 `
 
 export const PubLink = styled.div`
     position: relative;
-    ${sitePadding}
-    margin-bottom: 0.8rem;
+    padding: 0 ${sitePadding};
     display: inline-flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -76,6 +75,10 @@ export const PubLink = styled.div`
             margin-left: 4.3rem;
             ${setArrowDimensions({scaleFactor: 0.6})}
             transition: margin-left 0.2s ease-in;
+
+            div:nth-child(1) {
+                top: 0.1px;
+            }
         }
         
         ${LinkPrompt} {

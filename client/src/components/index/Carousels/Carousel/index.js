@@ -57,10 +57,10 @@ const ProjectCarousel = ({articlesData}) => {
     }
 
     return (
-        <Carousel>
+        <Carousel leftBtnHidden={leftBtnHidden}>
             <PubLink publication={articlesData[0].publication}/>
             <List>
-                <ArrowBtns leftBtnHidden={leftBtnHidden}>
+                <ArrowBtns>
                     <ArrowBtn btnHidden={leftBtnHidden} isLeftBtn={true} handleArrowClick={handleArrowClick}/>
                     <ArrowBtn btnHidden={false} isLeftBtn={false} handleArrowClick={handleArrowClick}/>
                 </ArrowBtns>

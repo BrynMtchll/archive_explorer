@@ -1,48 +1,31 @@
 import styled from 'styled-components'
 
-import {fontSize, color, articleCardWidth, articleCardHeight} from 'util/styles'
+import {fontSize, color, article} from 'util/styles'
 
 export const ArticleCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    // height: ${articleCardHeight};
-
-    // border: 1px solid ${color.lightSecondary};
-    // box-shadow: 0 0 4px 2px ${color.lightSecondary};
-    background: #d7dbd8;
-    border-radius: 5px;
-    padding: 0.5rem;
-    
-    ${articleCardWidth}
+    width: ${article.width};
 `
 export const Text = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     padding: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 10rem;
-    margin-right: 2rem;
-    min-width: 0;
-    flex-grow: 1;
-    background: #2c2e2c;
-    border-radius: 10px;
-    height: 20rem;
-    color: ${color.lightSecondary};
-    // box-shadow: -0.5rem -0.25rem 4px 4px #6b706c;
-
-
+    padding-bottom: 9rem;
+    margin: 0 1rem;
+    background: ${color.backgroundColorDarkSecondary};
+    border-radius: ${article.borderRadius};
+    height: ${article.height};
+    color: ${color.lightPrimary};
+    box-shadow: -1.2rem -0.5rem 0px -2px ${color.backgroundLightSecondary};
 `
 export const Thumbnail = styled.div`
-    max-height: 15rem;
-    height: 8rem;
-    min-height: 5rem;
-    border-radius: 5px;
-    margin-left: 2rem;
-    margin-top: -9rem;
+    height: 10rem;
+    border-radius: calc(${article.borderRadius} / 2);
+    margin-left: 3rem;
+    margin-top: -8rem;
     display: flex;
     overflow: hidden;
-    border: 2px solid #5c5504;
+    border: 1px solid ${color.backgroundLightSecondary};
 `
 export const Credits = styled.div`
     margin-bottom: 0.4rem;
@@ -87,7 +70,7 @@ export const Subtitle = styled.h5`
     margin-bottom: 1rem;
     line-height: 1.3;
     max-height: 2.6rem;
-    color: ${color.medium};
+    color: ${color.lightSecondary};
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -100,7 +83,7 @@ export const Details = styled.div`
     display: flex;
     justify-content: space-between;
     ${fontSize.t}
-    color: ${color.medium};
+    color: ${color.lightSecondary};
     justify-self: flex-end;
     align-items: flex-end;
     flex-grow: 1;
@@ -108,7 +91,7 @@ export const Details = styled.div`
 export const Date = styled.h6`
     margin-right: 1rem;
     text-transform: uppercase;
-    border-bottom: 0.5px solid ${color.medium};
+    border-bottom: 0.5px solid ${color.lightSecondary};
     flex-grow: 1;
 
 `

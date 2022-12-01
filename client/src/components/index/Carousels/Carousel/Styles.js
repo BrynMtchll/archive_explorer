@@ -1,18 +1,15 @@
 import styled from 'styled-components'
-import {fontSize, sitePadding, carouselItemWidthExp, color, articleCardHeight} from 'util/styles'
+import {fontSize, sitePadding, carousel, color, article} from 'util/styles'
 import {ArrowBtn, Arrow} from './ArrowBtn/Styles'
 import {LinkArrow} from './PubLink/Styles'
 
 
 
 export const Carousel = styled.div`
-    margin-bottom: 2.5rem;
-    // box-shadow: 0 0 5px 5px ${color.lightSecondary};
-    // border: 1px solid ${color.medium};
-    // background: #f2e9ea;
+    margin-bottom: 0rem;
     padding-top: 2rem;
-    // border: 1px solid black;
-    
+    padding-bottom: 3rem;
+
     ${LinkArrow} {
         visibility: hidden;
     }
@@ -56,18 +53,18 @@ export const ArrowBtns = styled.div`
 
 export const List = styled.div`
     position: relative;
-    ${sitePadding}
+    padding: 0 ${sitePadding};
     white-space: nowrap;
-    height: calc(${articleCardHeight});
+    height: calc(${article.height});
+    margin-top: 1rem;
+
 `
 
 export const Item = styled.div`
     position: absolute;
     display: inline-block;
-    left: calc(${props => props.position} * (${carouselItemWidthExp}) + 4rem);
+    left: calc(${props => props.position} * ${carousel.itemWidth} + ${sitePadding});
     visibility: ${props => (props.visible) ? "visible" : "hidden"};
     ${props => props.btnDisabled ? "transition: left 0.75s;" : "" }
-    top: -1px;
-
 `
 
