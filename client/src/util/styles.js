@@ -17,17 +17,17 @@ export const fontFamily = 'font-family: "Fira Sans", sans-serif;'
 
 export const color = {
     lightPrimary: '#E8E8E8',
-    lightSecondary: '#b5b5b5',
+    lightSecondary: '#c2c2c2',
     darkPrimary: '#0D1213',
     darkSecondary: '#031B1A',
     medium: '#5c5c5c',
     colorPrimary: '#00A7AF',
     backgroundLightSecondary: '#c0cfc6',
     backgroundLightPrimary: '#e1ede6',
-    backgroundColorDarkSecondary: '#67746d',
+    backgroundColorDarkSecondary: '#809188',
     backgroundColorMedium: '#96a899',
     colorSecondary: '#5c5504',
-    highlight: '#db355c',
+    highlight: '#e8335e',
 }
 
 export const carousel = {

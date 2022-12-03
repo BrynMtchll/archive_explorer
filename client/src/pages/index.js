@@ -6,7 +6,7 @@ import Carousels from 'components/index/Carousels'
 import Layout from 'components/shared/Layout'
 
 const IndexPage = ({data}) => {
-   const articlesData = data.allContentfulArticleComponent.edges.map(edge => edge.node);
+   const articlesData = data.allContentfulArticleComponent.nodes.map(node => node);
    return (
       <Layout>
          <Header/>
@@ -28,24 +28,23 @@ export const Head = () => {
 export const query = graphql`
 query topTenArticles {
    allContentfulArticleComponent(
+     limit: 10
      filter: {publication: {eq: "The_Startup"}}
      sort: {claps: DESC}
-     limit: 10
    ) {
-     edges {
-       node {
-         id
-         title
-         claps
-         author
-         date
-         publication
-         subtitle
-         url
-         thumbnail {
-            gatsbyImageData(placeholder: BLURRED)
-         }
+     nodes {
+       author
+       claps
+       date
+       id
+       publication
+       subtitle
+       title
+       thumbnail {
+         gatsbyImageData(placeholder: BLURRED)
        }
+       month
+       year
      }
    }
  }

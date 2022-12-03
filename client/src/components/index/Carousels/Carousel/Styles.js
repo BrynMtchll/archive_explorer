@@ -1,12 +1,10 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {fontSize, sitePadding, carousel, color, article} from 'util/styles'
 import {ArrowBtn, Arrow} from './ArrowBtn/Styles'
 import {LinkArrow} from './PubLink/Styles'
 
-
-
 export const Carousel = styled.div`
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
 
@@ -64,7 +62,7 @@ export const Item = styled.div`
     position: absolute;
     display: inline-block;
     left: calc(${props => props.position} * ${carousel.itemWidth} + ${sitePadding});
-    visibility: ${props => (props.visible) ? "visible" : "hidden"};
-    ${props => props.btnDisabled ? "transition: left 0.75s;" : "" }
+    ${props => props.animate ? "transition: left 0.75s;" : ""} 
+    border-radius: ${article.borderRadius};
 `
 

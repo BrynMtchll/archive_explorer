@@ -2,9 +2,6 @@ import styled from 'styled-components'
 
 import {fontSize, color, article} from 'util/styles'
 
-export const ArticleCard = styled.div`
-    width: ${article.width};
-`
 export const Text = styled.div`
     display: flex;
     justify-content: flex-start;
@@ -19,14 +16,24 @@ export const Text = styled.div`
     box-shadow: -1.2rem -0.5rem 0px -2px ${color.backgroundLightSecondary};
 `
 export const Thumbnail = styled.div`
-    height: 10rem;
+    position: relative;
+    height: 11rem;
     border-radius: calc(${article.borderRadius} / 2);
     margin-left: 3rem;
     margin-top: -8rem;
     display: flex;
     overflow: hidden;
-    border: 1px solid ${color.backgroundLightSecondary};
+    border: 2px solid ${color.backgroundLightSecondary};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        width: 100%;
+        height: 100%;
+    }
 `
+
 export const Credits = styled.div`
     margin-bottom: 0.4rem;
     display: flex;
@@ -59,7 +66,7 @@ export const Title = styled.h4`
     line-height: 1.25;
     font-weight: 700;
     margin-bottom: 0.4rem;
-    max-height: 5.25rem;
+    max-height: 5.85rem;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -76,6 +83,13 @@ export const Subtitle = styled.h5`
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; 
+
+    div {
+        width: 0;
+        border-bottom: 2px solid ${color.lightPrimary};
+        height: 2px;
+        margin-bottom: 0.2rem;
+    }
 
 `
 
@@ -106,4 +120,40 @@ export const ClapsLogo = styled.div`
     border-radius: 50%;
     border: 0.5px solid ${color.darkPrimary};
     margin-right: 0.4rem;
+`
+
+export const ArticleCard = styled.div`
+    width: ${article.width};
+    cursor: pointer;
+    perspective: 1000px;
+
+    ${Text} {
+        transition: box-shadow 0.4s;
+    }
+    ${Subtitle} div {
+        transition: width 0.4s;
+    }
+
+    ${Thumbnail} {
+        div {
+            transition: transform 0.4s;
+        }
+    }
+
+    &:hover {
+        ${Text} {
+            box-shadow: -0.8rem -0.8rem 0px -2px ${color.backgroundLightSecondary};
+        }
+        ${Thumbnail} {
+            border: 2px solid ${color.lightPrimary};
+
+            div {
+                transform: scale(1.02);
+            }
+
+        }
+        ${Subtitle} div {
+            width: 100%;
+        }
+    }
 `

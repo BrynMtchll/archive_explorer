@@ -15,7 +15,10 @@ const ProjectArticleCard = ({articleData}) => {
                     <Pub>{articleData.publication}</Pub>
                 </Credits> */}
                 <Title>{articleData.title}</Title>
-                <Subtitle>{articleData.subtitle}</Subtitle>
+                <Subtitle>
+                    <div></div>
+                    {articleData.subtitle}
+                    </Subtitle>
                 <Details>
                     <Date>{articleData.date}</Date>
                     {/* <Claps><ClapsLogo/>{articleData.claps}</Claps> */}

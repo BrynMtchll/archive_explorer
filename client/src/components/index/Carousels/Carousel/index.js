@@ -6,48 +6,69 @@ import ArticleCard from 'components/shared/ArticleCard'
 import {Carousel, ArrowBtns, List, Item} from './Styles'
 
 const ProjectCarousel = ({articlesData}) => {
-    const initpositions = []
-    for (let i = 0; i < 10; i++) initpositions.push({position: i, visible: true})
+    const initPositions = []
+    for (let i = 0; i < 10; i++) initPositions.push({position: i, animate: true});
     
-    const [positions, setPositions] = useState(initpositions);
+    const [positions, setPositions] = useState(initPositions);
     const [btnDisabled, setBtnDisabled] = useState(false);
     const [leftBtnHidden, setLeftBtnHidden] = useState(true);
 
     const items = articlesData.map((articleData, i) => (
-        <Item btnDisabled={btnDisabled} key={articleData.id} visible={positions[i].visible} position={positions[i].position}><ArticleCard articleData={articleData}/></Item>
-    ))
+            <Item key={articleData.id} animate={positions[i].animate} position={positions[i].position}>
+                <ArticleCard articleData={articleData}/>
+            </Item>
+        )
+    )
 
-    const updatePositions = ({bound, increment, jump}, isLeftBtn) => {
+    const loadCarouselSide = ({bound, jump}, isLeftBtn) => {
         setPositions(
             positions.map(state => {
                 if ((state.position > bound && isLeftBtn) || 
                     (state.position < bound && !isLeftBtn)) {
                     state.position += jump;
-                    state.visible = false;
+                    state.animate = false;
                 }
-                else state.position += increment;
                 return state;
             })
         )
+    }
 
-        // after positions have updated
+    const shiftItems = (increment) => {
+        // with setTimeout so that styles update prior
         setTimeout(() => {
             setPositions(
                 positions.map(state => {
-                    state.visible = true;
+                    state.position += increment;
+                    state.animate = true;
                     return state;
                 })
             )
-        }, 750)
+        }, 1)
+    }
+
+    const updatePositions = (isLeftBtn) => {
+        isLeftBtn
+        ? loadCarouselSide({bound: 4, jump: -10}, isLeftBtn)
+        : loadCarouselSide({bound: -1, jump: 10}, isLeftBtn)
+        
+        const posOfFirst = positions[0].position;
+        let increment = 4;
+
+        if (isLeftBtn) {
+            increment = -5 < posOfFirst && posOfFirst < 0
+                ? -posOfFirst
+                : increment
+        } else {
+            increment = 0 < posOfFirst && posOfFirst < 4
+                ? -posOfFirst
+                : -increment
+        }
+        shiftItems(increment);
     }
 
     const handleArrowClick = (isLeftBtn) => {
-
         if (!btnDisabled) {
-            isLeftBtn
-            ? updatePositions({bound: 2, increment: 2, jump: -8}, isLeftBtn)
-            : updatePositions({bound: -3, increment: -2, jump: 8}, isLeftBtn)
-
+            updatePositions(isLeftBtn);
             setBtnDisabled(true)
             setTimeout(() => {
                 setBtnDisabled(false)
